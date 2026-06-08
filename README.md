@@ -1,4 +1,4 @@
-# 📄 ResumeForge
+# 📄 Cara
 
 > Build beautiful, ATS-friendly resumes with a real-time editor, live preview, and one-click PDF export.
 
