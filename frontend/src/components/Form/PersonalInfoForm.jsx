@@ -3,6 +3,9 @@ import { useResume } from "../../context/ResumeContext";
 export default function PersonalInfoForm() {
   const { resume, setResume } = useResume();
 
+
+  console.log(resume)
+
   const handleChange = (field, value) => {
     setResume(prev => ({
       ...prev,

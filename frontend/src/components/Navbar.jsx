@@ -1,7 +1,28 @@
-
+import { useResume } from "../context/ResumeContext"
 import { FileText, Download, Save } from "lucide-react";
+import { saveResume } from "../api/resumeAPI"
 
 function Navbar() {
+
+  const { resume } = useResume();
+
+  const handleSave = async()=>{
+    try {
+      const saved = await saveResume(resume);
+      console.log(saved);
+      alert("resume saved!")
+    } catch (error) {
+      console.error(error);
+
+      alert(
+        "Save Failed"
+      );
+    }
+  }
+
+
+
+
   return (
     <header className="h-16 bg-white border-b flex items-center justify-between px-6 shrink-0">
         <div className="flex items-center gap-3">
@@ -13,6 +34,7 @@ function Navbar() {
 
         <div className="flex items-center gap-3">
           <button
+          onClick={handleSave}
             className="
               px-4
               py-2
